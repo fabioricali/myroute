@@ -36,5 +36,8 @@
     "unminified-webpack-plugin": "^1.4.2",
     "webpack": "^3.10.0",
     "webpack-auto-inject-version": "^1.0.0"
+  },
+  "dependencies": {
+    "super-trailing-slash": "^1.0.1"
   }
 }

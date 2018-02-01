@@ -1,11 +1,12 @@
 const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+const {JSDOM} = jsdom;
 const MyRoute = require('../');
 
 
 describe('myroute', function () {
     it('instance', function () {
-        const { window } = new JSDOM('',{
+        const router = new MyRoute();
+        const {window} = new JSDOM('', {
             url: 'http://localhost'
         });
 
@@ -16,6 +17,15 @@ describe('myroute', function () {
         console.log(window.location.pathname);
         window.history.back();
         console.log(window.location.pathname);
-        new MyRoute();
+
+        router
+            .on('/router2', () => {
+                console.log('hello');
+            })
+            .on('/router2', () => {
+                console.log('hello');
+            });
+
+        console.log(router.routes);
     })
 });
